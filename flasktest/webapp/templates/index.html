@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>
+</title>
+<head>
+    <meta charset = UTF-8>
+</head>
+<!--<body bgcolor = "darkmagenta">-->
+<body background ="{{url_for('static',filename = 'womi.jpg')}}">
+    <h1>Hello from a template!</h1>
+    <ol>
+        {% if name %}
+        <h1><li>Hello! {{name}}</li></h1>
+        {% else %}
+        <li><h1>Hello! 김성령!</h1></li>
+        {% endif %}
+    </ol>
+    단&nbsp&nbsp락<br> 시작전<br>
+    안녕 python!
+    <p align = "center">
+        문단태그
+        태그        입력시 단락과 단락을구분
+    </p>
+    단락 끝
+    <pre> <!--단락 바꾸면서 줄도 바뀐다.-->
+        안녕!!!     python!
+        python!!!
+    </pre>
+    <a href="http://www.naver.com" target ="_blank" title="네이버 홈페이지 열기">네이버</a>
+    <p><a href="#bottom">문서의하단으로</a></p>
+    <!--<p style="height:1000px;">스크롤이되는 효과를나타내기위해서 이 문단의 높이를 높게 지정합니다.</p>-->
+    <p><a name ="bottom"></a>여기가 문서의 하단</p>
+    <!--<img src="static/woman.jpg" width="200" height="150" border = "0">-->
+    <p><img src="{{url_for('static',filename = 'woman.jpg')}}" width="200" height="175" border ="3" align ="top">align="top"</p>
+    <p><img src="{{url_for('static',filename = 'neko.gif')}}" width="200" height="175" border ="3" align ="middle">align="middle"</p>
+    <p><img src="{{url_for('static',filename = 'woman2.jpg')}}" width="200" height="175" align="right" hspace="10" vspace="10">2007년 1월 위키백과는 처음으로 가장 인기있는 웹사이트 리스트 톱 10에 이름을 올렸다. 컴스코어는 위키백과의 연간 방문자를 4,290만 명으로 집계하며 9위로 올렸고, 《뉴욕타임즈》는 10로 올렸다. 애플은 11위로 집계하였다. 2006년도의 순위가 33위였던 것에 비하면 놀라운 부상이었다.[36] 2015년 3월 위키백과는 5위를 기록하였다.[37][38] 이 시기 순위는 알렉사 인터넷의 조사에 의한 것으로, 위키백과는 2014년 내내 매 월 8억 이상의 페이지 뷰를 기록하였다.
+        2012년 1월 영어 위키백과는 미국 의회의 온라인 저작권 침해 금지 법안(SOPA)와 지적 재산권 보호 법안(PIPA)의 제정 시도에 맞어 SOPA와 PIPA 반대 시위의 일환으로 24시간 블랙아웃 시위를 벌였다.[40]
+        2014년 1월 20일 수보드 바르마(Subodh Varma)는 《이코노믹 타임즈》에 투고한 글을 통해 위키백과가 2012년 12월에서 2013년 12월 사이에 전체적으로 페이지 뷰가 10퍼센트에 달하는 2억 번 이상의 페이지뷰를 잃었다고 발표하였다. 주요 언어판에 따라 나누면 영어 위키백과의 페이지뷰 감소율은 12%, 독일어가 17%, 일본어는 9% 였다. 바르마는 "만일 위키백과 운영자들이 통계 집계에 오류가 있다고 주장한다면 지난해 도입된 구글의 지식 그래프가 그 입을 다물게 할 것"이라고 덧붙였다.[41] 뉴욕 대학교의 부교수 클레이 셔키는 지식 그래프가 다른 사이트들의 페이지뷰를 잠식하고 있는 것에 대해 "검색 페이지에서 당신의 질문에 대한 답을 바로 볼 수 있는데 굳이 그 싸이트를 방문하겠는가?"라고 반문하였다.[41]
+        2016년 12월 위키백과는 가장 인기있는 웹사이트 리스트에 5위로 기록되었다.[42]
+        위키백과의 문서 수는 2016년 12월 31일 기준으로 영어 위키백과 5백3십만 개 이상, 스웨덴어 위키백과와 세부아노어 위키백과가 3백7십만 개 이상, 독일어 위키백과 2백만 개 이상, 네덜란드어 위키백과와 프랑스어 위키백과가 1백8십만 개 이상 등의 순위를 보이고 있으며, 운영중인 295개의 모든 언어를 합하면 약 4천3백3십만 개 이상이 된다.[43][44]
+    </p>
+    <p><img src="{{url_for('static',filename = 'accounting.png')}}" width="200" height="175" border ="3" align ="middle" >align="middle"</p>
+    <table background ="{{url_for('static',filename ='yuki.jpg')}}" width = "250" height ="150%" border = "1" cellpadding ="5" cellspacing="10">
+        <tr>
+             <td colspan ="2" align ="center">1*1셀</td>
+             <td align ="center">1*2셀</td>
+        </tr>
+        <tr>
+            <td rowspan ="2" align ="center">2*1셀</td>
+            <td align ="center">2*2셀</td>
+        </tr>
+    </table>
+    <table border ="1" width ="250" height ="250">
+        <tr>
+            <td></td>
+            <td></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td rowspan ="4"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <ol type ="l">
+        <li>김기덕</li>
+        <li>김성령</li>
+        <li>김혜원</li>
+    </ol>
+    <ul></ul>
+</body> 
+</html>

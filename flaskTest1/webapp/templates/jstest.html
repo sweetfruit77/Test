@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 연습1</title>
+</head>
+<body>
+    <h1 id="test" style="color:blue; background-color:aquamarine; ">자바스크립트</h1>
+    <script>
+        var s;
+        s = 100;
+        document.write(s+"<br>");
+        document.write(typeof(s)+"<br>");
+        s = "김기덕";
+        document.write(s+"<br>");
+        document.write(typeof(s)+"<br>");
+
+        var s = "Hello World";
+        var y = "How are you "+"today";
+
+        document.write(s.toUpperCase()+"<br/>");
+        document.write(y.toLowerCase()+"<br/>");
+
+        function func(){
+            var e = document.getElementById("test");
+            e.style.color = "green";
+            e.style.background="skyblue";
+        }
+    </script>
+    <button onclick = "func()">클릭!</button>
+</body>
+</html>

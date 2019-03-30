@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include "import.html" %}
+    <title>Hello, world!</title>
+  </head>
+  {% include "menu.html" %}
+  <body>
+  <br/>
+  <h1 align = "center">회원목록 리스트</h1>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <div class="container-fluid">
+        <!-- Content here -->
+        <table class="table table- table-dark">
+            <thead>
+              <tr>
+                <th scope="col">회원번호</th>
+                <th scope="col">아이디</th>
+                <th scope="col">패스워드</th>
+                <th scope="col">이름</th>
+                <th scope="col">나이</th>
+                <th scope="col">이메일</th>
+                <th scope="col">주소</th>
+                <th scope="col">성별</th>
+                <th scope="col">번호</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>{{list['userid']}}</td>
+                <td>{{list['userpw']}}</td>
+                <td>{{list['username']}}</td>
+                <td>{{list['userage']}}</td>
+                <td>{{list['useremail']}}</td>
+                <td>{{list['useradd']}}</td>
+                <td>{{list['usergender']}}</td>
+                <td>{{list['usertel']}}</td>
+              </tr>
+              </tbody>
+          </table>
+          <Script type = "text/javascript">
+            function goUpdate(){
+                dir = "/updateform/{{list['userid']}}"
+                location.replace(dir);
+            }
+            function goDelete(){
+                dir = "/deleteform/{{list['userid']}}"
+                location.replace(dir);
+            }
+          </Script>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">회원 정보 삭제</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    삭제할거에요?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">아니 놔두세요</button>
+                    <button type="button" class="btn btn-primary" onclick="goDelete()">당장 삭제해!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <button type="button" class="btn btn-primary" onclick = "goUpdate()">수정</button>
+          <button type="button" class="btn btn-secondary"  data-toggle = "modal" data-target = "#exampleModal">삭제</button>
+          <button type="button" class="btn btn-success" onclick = "location.replace('/list');">목록으로</button>
+      </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "import.html"%}
+    <script>
+        $(function(){
+            $("img").attr("width","200");
+            $("img").prop("height","150");
+            $("img").removeAttr("border");
+        });
+    </script>
+    <title>속성값 설정 , 변경 제거</title>
+</head>
+<body>
+    <h1>속성 값 설정 , 변경 , 제거</h1>
+    <img src="/static/img/woman.jpg" width="500" border="2">
+</body>
+</html>

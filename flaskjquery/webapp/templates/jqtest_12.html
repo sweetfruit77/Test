@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "import.html" %}
+    <script>
+        $(function(){
+            $('#btn1').click(function(){
+                $('p.blue').fadeToggle('high');
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <p class ="blue">
+        <img src="/static/img/woman.jpg">
+    </p>
+    <button id ="btn1">hide blue</button>
+</body>
+</html>

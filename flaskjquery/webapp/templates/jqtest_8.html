@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "import.html" %}
+    <script>
+        $(function(){
+            var val = $("#user_name").val();
+            $("#my_name").val(val);
+            var copy = $("#user_name").clone();
+            $(copy).insertAfter("#user_name");
+            $("#my_name").css("color","red");
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <input type="text" name="user_name" id ="user_name" value="홍길동">
+    </p>
+    <p>
+        <input type="text" name="my_name" id="my_name">
+    </p>
+</body>
+</html>

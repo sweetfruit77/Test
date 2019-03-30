@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form 양식 연습</title>
+</head>
+<body>
+    <h1>입력양식</h1>
+    <form action ="formresult" method="POST">
+        <!--name,id값은 되도록 중복을 허용하지 않는다.-->
+        사용자 아이디:&nbsp; <input type="text" name="username" placeholder="사용자이름" value ="김기덕"><br/>  
+        사용자 패스워드:&nbsp; <input type="password" name="userpass"><br/>
+        사용자 이메일:&nbsp; <input type="text" name="email"><br/>
+        <input type="image" src="{{url_for('static',filename = 'accounting.png')}}" width ="150" height ="100" onclick="submit()"><br/>
+        <label>안녕?</label><br/>
+        <!-- multiple 다중선택가능-->
+        <!-- size 처음에 보이는 이름의 갯수-->    
+        <select name="joblist" multiple size="2">
+            <option value="">직업선택</option>
+            <option value="student">학생</option>
+            <option value="officeMan" selected="selected">회사원</option>
+            <option value="option">기타</option>
+        </select>
+        <select name="hobby" multiple>
+            <option value="book">독서</option>
+            <optgroup label ="sport">
+            <option value="baseball">야구</option>
+            <option value="soccer">축구</option>
+            </optgroup>
+            <option value="music">음악</option>
+        </select>
+        <!--<p>
+            <input type="checkbox" name="chk" id="chk_value" value="HTML">HTML
+            <input type="checkbox" name="chk" id="chk_value" value="CSS" checked="checked">CSS
+            <input type="checkbox" name="chk" id="chk_value" value="webDesign">웹디자인
+        </p>-->
+        <!--<p>
+            <input type="radio" name="rad" value="kor">국어
+            <input type="radio" name="rad" value="eng">영어
+            <input type="radio" name="rad" value="math">수학
+        </p>-->
+        <fieldset>
+            <legend>인적사항</legend>
+            <input type="checkbox" name="chk" value="HTML">HTML
+            <input type="checkbox" name="chk" value="CSS" checked="checked">CSS
+            <input type="checkbox" name="chk" value="webDesign">웹디자인
+            <input type="radio" name="rad" value="kor">국어
+            <input type="radio" name="rad" value="eng">영어
+            <input type="radio" name="rab" value="math">수학
+        </fieldset><br/>
+        <h3>이력서</h3>
+        <textarea rows = "8" cols="40" name="resume">이력서</textarea>><br>
+        <label for="html">HTML</label>
+        <input name="checkinfo" type="checkbox" id="html">
+        <input type="submit" value="전송">
+        <input type="reset" value="초기화"><br/>
+    </form>
+</body>
+</html> 

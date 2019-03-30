@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% include "design_basic/bootstrap.html" %}
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" align="center">
+        <h5>회원등록</h5>
+    </div>
+    <div class="container">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">1:姓　２名前</span>
+            </div>
+            <input type="text" class="form-control">
+            <input type="text" class="form-control">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="UserName">会員ID</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="UserName">
+            <input type="button" value="重複確認"/>
+        </div>
+    </div>
+</body>
+</html>

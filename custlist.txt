@@ -1,0 +1,14 @@
+[
+    {
+        "name": "\uae40\uae30\ub355",
+        "sex": "M",
+        "email": "kkd479",
+        "birthday": "1989"
+    },
+    {
+        "name": "\uae40\uc131\ub839",
+        "sex": "F",
+        "email": "ksl@naver.com",
+        "birthday": "1994"
+    }
+]

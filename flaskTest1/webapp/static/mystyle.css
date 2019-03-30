@@ -1,0 +1,8 @@
+p{color:chocolate;}
+h1{color:aquamarine;}
+div{color:burlywood;}
+p div{color:darkblue; background-color:blueviolet;}
+p.blue{color:blue;}
+div.green{color:greenyellow;}
+span.yellow{color:yellowgreen;}
+#red{color:red};

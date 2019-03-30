@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "bootstrap.html" %}
+    <title>영화목록 수정</title>
+</head>
+<body>
+    {% include "menu.html" %}
+    <div class="container">
+        <div class="media">
+            <img src="/static/movieposter/{{movie['movieposterName']}}" class="mr-3" style="max-width: 200px;" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0">{{movie['movietitle']}}</h5>
+                    <p class="card-text">연령제한 {{movie['moviegrade']}}</p>
+                    <p class="card-text">영화장르 {{movie['moviegenre']}}</p>
+                    <p class="card-text">영화상영시간 {{movie['moviestart']}}</p>
+                    <p class="card-text">영화감독 {{movie['moviedirector']}}</p>
+                    <p class="card-text">영화배우 {{movie['moviestar'].split(",")}}</p>
+                </div>
+        </div>
+        <br/>
+        <script type = "text/javascript">
+            function goUpdate(){
+                dir = "/movieUpdate/{{movie['movieid']}}"
+                location.replace(dir);
+            }
+            function goDelete(){
+                dir ="/movieDelete/{{movie['movieid']}}"
+                location.replace(dir);
+            }
+        </script>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">회원 정보 삭제</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      삭제할거에요?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">아니 놔두세요</button>
+                      <button type="button" class="btn btn-primary" onclick="goDelete()">당장 삭제해!</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <button type="button" class="btn btn-primary" onclick = "goUpdate()">영화 정보 수정</button>
+        <button type="button" class="btn btn-primary" data-toggle = "modal" data-target = "#exampleModal">영화 정보 삭제</button>
+</body>
+</html>

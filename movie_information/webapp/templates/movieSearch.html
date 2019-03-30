@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "bootstrap.html" %}
+    <title>ajax</title>
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script>
+        function Searchlist(){
+            $.ajax({type : "POST",
+                data : {"movietitle" : $("#movietitle").val()},
+                url : "/movieSearch",
+                dataType : "json",
+                success : function(result){
+                    console.log(result);
+                    makeSerchlist(result);
+                }
+            });
+        }
+        function makeSerchlist(result){
+            $("#movieSearch").html("");
+                $(result).each(function(index,movie){
+                    $('#movieSearch').append(
+                    '<img src="/static/movieposter/'+movie.movieposterName+'" class="mr-3" style="max-width: 200px;" alt="...">'+
+                    '<div class="media-body">'+                        
+                    '<h5 class="mt-0"><a href ="/movieContent/'+movie.movieid+'>'+movie.movietitle+'</a></h5>'+
+                    '<p class="card-text">연령제한 '+movie.moviegrade+'</p>'+
+                    '<p class="card-text">영화장르 '+movie.moviegenre+'</p>'+
+                    '<p class="card-text">영화상영시간'+movie.movietime+'</p>'+
+                    '<p class="card-text">영화감독 '+movie.moviedirector+'</p>'+
+                    '<p class="card-text">영화배우 '+movie.moviestar+'</p>'  
+                );
+            });
+        }
+    </script>
+</head>
+<body>
+    {% include "menu.html" %}
+    <br/>
+    <h1 align = "center">영화 리스트</h1>
+    <div class ="container">
+        <div class ="input-group mb-3">
+            <input type="text" class="form-control" onkeyup=" Searchlist();" placeholder="movietitle" id ="movietitle" name="movietitle">
+        </div>
+    </div>
+    <div class="container">
+        <div class="media" id = "movieSearch">
+            {% for movie in SearchList : %}
+            <img src="/static/movieposter/{{movie['movieposterName']}}" class="mr-3" style="max-width: 200px;" alt="...">
+                <div class="media-body">                        
+                    <h5 class="mt-0"><a href ="/movieContent/{{movie['movieid']}}">{{movie['movietitle']}}</a></h5>
+                    <p class="card-text">연령제한 {{movie['moviegrade']}}</p>
+                    <p class="card-text">영화장르 {{movie['moviegenre']}}</p>
+                    <p class="card-text">영화상영시간 {{movie['movietime']}}</p>
+                    <p class="card-text">영화감독 {{movie['moviedirector']}}</p>
+                    <p class="card-text">영화배우 {{movie['moviestar'].split(",")}}</p>  
+            </div>
+            {% endfor %}  
+        </div>
+    </div>
+</body>
+</html>

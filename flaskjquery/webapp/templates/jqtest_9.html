@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "import.html" %}
+    <script>
+        $(function(){
+            $("#st_1").prop("title","title속성값");
+            $("#txt1").text($("#st_1").prop("title"));
+            $("#txt2").text($("#st_1").prop("tagName"));
+            $("#txt3").text($("#sel").prop("selectedindex"));
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <p id ="st_1">내용</p>
+    <p id ="txt1"></p>
+    <p id ="txt2"></p>
+    <select id ="sel">
+        <option value="naver">네이버</option>
+        <option value="daum" selected = "selected">다음</option>
+        <option value="nate">네이트</option>
+    </select>
+    <p id ="txt3"></p>
+</body>
+</html>

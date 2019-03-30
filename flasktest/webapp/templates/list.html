@@ -1,0 +1,13 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <title>딕셔너리</title>
+</head>
+<body>
+    <ul>
+        {%for key,value in nlist.items() %}
+        <li>key:{{key}},value{{value}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

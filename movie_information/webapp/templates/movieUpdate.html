@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "bootstrap.html" %}
+    <title>영화등록</title>
+</head>
+<body>
+    {% include "menu.html" %}
+    <div class="container">
+        <form action = "/movieUpdate" method = "post" enctype="multipart/form-data">
+            <input type="hidden" name="movieid" value="{{movie['movieid']}}">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">영화포스터</span>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="exampleFormControlInput1">파일 업로드</label>
+                    <input type="file" class="form-control-file" id="movieposterName" name="movieposterName" value="{{movie['movieposterName']}}">
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">영화제목</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" id = "movietitle" name="movietitle" value="{{movie['movietitle']}}" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">연령제한</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id = moviegrade name = "moviegrade" value="{{movie['moviegrade']}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">영화장르</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id = "moviegenre" name="moviegenre" value="{{movie['moviegenre']}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">영화상영시간</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id = "movietime" name="movietime" value="{{movie['movietime']}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">영화감독</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id = "moviedirector" name="moviedirector" value="{{movie['moviedirector']}}">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">영화배우</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id = "moviestar" name="moviestar" value="{{movie['moviestar']}}">
+            </div>
+            <button type="submit" class="btn btn-outline-danger">등록</button>
+            <button type="reset" class="btn btn-outline-danger">리셋</button>        
+        </div>
+    </form>
+</body>
+</html>

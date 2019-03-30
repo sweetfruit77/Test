@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>form result page</title>
+</head>
+<body>
+    <h1>폼에 입력받은 값</h1>
+    사용자 아이디:&nbsp;{{name}}<br/>
+    사용자 패스워드:&nbsp;{{password}}<br/>
+    사용자 이메일:&nbsp;{{email}}<br/>
+    사용자 직업:<br/>
+    {% for item in joblist %}
+    <li> {{item}} </li>
+    {% endfor %}
+    사용자 취미:<br/>
+    {% for hobby in hobbylist %}
+    <li>{{hobby}}</li>
+    {% endfor %}
+    사용가능it<br/>
+    {% for check in it %}
+    <li>{{check}}</li>
+    {% endfor %}
+    사용자 전공:&nbsp;{{major}}<br/>
+    이력서:<br/>
+    {{resume}}
+</body>
+</html>

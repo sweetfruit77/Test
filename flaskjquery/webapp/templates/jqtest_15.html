@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "import.html" %}
+    <script>
+        $(function(){
+            $("#btn1").mouseover(function(){
+                $("p").css("background-color","blue");
+            });
+            $("#btn1").mouseout(function(){
+                $("p").css("background-color","aqua");
+            });
+            $("#btn2").mouseover(function(){
+                $("p").css("background-color","red");
+            });
+            $("#btn2").mouseout(function(){
+                $("p").css("background-color","yellow");
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <button id ="btn1">mouseover/out</button>
+    <button id= "btn2">hover</button>
+    <p>내용</p>
+</body>
+</html>

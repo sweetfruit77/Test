@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "bootstrap.html" %}
+    <title>메인 영화 홈페이지</title>
+</head>
+<body>
+    {% include "menu.html" %}
+    <div class="container">
+            <h2>현재 상영 영화</h2>
+    </div>
+    <div class="container">
+        {% for movie in list : %}
+        <div class="media">
+            <img src="/static/movieposter/{{movie['movieposterName']}}" class="mr-3" style="max-width: 200px;" alt="...">
+                <div class="media-body">
+                    
+                    <h5 class="mt-0"><a href ="/movieContent/{{movie['movieid']}}">{{movie['movietitle']}}</a></h5>
+                    <p class="card-text">연령제한 {{movie['moviegrade']}}</p>
+                    <p class="card-text">영화장르 {{movie['moviegenre']}}</p>
+                    <p class="card-text">영화상영시간 {{movie['moviestart']}}</p>
+                    <p class="card-text">영화감독 {{movie['moviedirector']}}</p>
+                    <p class="card-text">영화배우 {{movie['moviestar'].split(",")}}</p>
+                </div>
+        </div>
+        {% endfor %}
+        <br/>
+        <button type="button" class="btn btn-outline-success">예매하기</button>
+        <button type="button" class="btn btn-outline-success">포토보기</button>
+        <button type="button" class="btn btn-outline-success">예고편</button>
+        <button type="button" class="btn btn-outline-success">메이킹</button>
+        <button type="button" class="btn btn-outline-success">인터뷰</button>
+    </div>
+
+</body>
+</html>
